@@ -1,0 +1,65 @@
+# Quiz 10
+
+# Tony Maldonado-Perez
+# amaldo36@uic.edu
+
+# I hereby attest that I have adhered to the rules for quizzes and projects as well as UIC's
+# Academic Integrity standards. Signed: Anthony Maldonado-Perez
+
+# Question 1
+
+# a)
+# No, it would be better off to have two separate CLASSES
+# MUSIC can have multiple different GENRES,TONES,TEMPOS, ETC. and JAZZ can have multiple ARTIST,
+# ALUBMS, and SONGS, that could all be possible SUBCLASSES
+
+# b)
+# Having ALBUM as the SUPERCLASS and SONG as a SUBCLASS would make the most sense.
+# In an ALBUM there a number of different SONGS that go into the ALBUM.
+# as for SONG the only thing I can think of are FEATURES, and SONG NAME.
+
+# c)
+# It would be better to have CLASS B as a SUPERCLASS and CLASS A as a SUBCLASS
+# since they have the same attributes that have the same METHODS its better to have it all under one CLASS
+
+# Question 2
+
+# a)
+class Food:
+    def __init__(self, price, calories):
+        self.price = price
+        self.calories = calories
+class Pizza(Food):
+    def __init__(self , *toppings):
+        #By default, a pizza starts at $15 and has 600 calories
+        super().__init__(15, 600)
+        self.toppings = toppings
+        #Each topping is itself a Food item which adds to the price and calories of the pizza
+        for top in toppings:
+            self.price += top.price
+            self.calories += top.calories
+    def __int__(self,*Pepperoni):
+        super().__init__(1.25,200)
+        self.Pepperoni = Pepperoni
+        for pep in Pepperoni:
+            self.price += pep.price
+            self.calories += pep.calories
+    def __int__(self,*BlackOlives):
+        super().__init__(0.50,40)
+        self.BlackOlives = BlackOlives
+        for black in BlackOlives:
+            self.price += black.price
+            self.calories += black.calories
+    def __int__(self,*Spinach):
+        super(self).__int__(0.75,36)
+        self.Spinach = Spinach
+        for spin in Spinach:
+            self.price += spin.price
+            self.calories += spin.calories
+
+# Question 3
+    try:
+        raise Exception
+    except Exception as error:
+        print('only integers and floats are allowed for the price and calories')
+
